@@ -3,11 +3,13 @@ import { ArrowLeftFromLine, ArrowRightFromLine } from 'lucide-react'
 import { Hint } from '@/components/hint'
 import { useSidebar } from '@/store/use-sidebar'
 import React from 'react'
+import { Skeleton } from '@/components/ui/skeleton'
 import { Button } from '@/components/ui/button'
 export const Toggle = () => {
     const {
         collapsed, onExpand, onCollapse
     } = useSidebar((state) => state);
+
     const label = collapsed ? "Expand" : "Collapse";
     return (
         <>
@@ -22,7 +24,7 @@ export const Toggle = () => {
                 )
             }
             {!collapsed && (
-                <div className=' p-3 pl6 mb-3 flex items-center w-full transition'>
+                <div className=' p-3 pl-6 mb-3 flex items-center w-full transition'>
                     <p className='font-semibold text-primary'>
                         For you
                     </p>
@@ -35,5 +37,13 @@ export const Toggle = () => {
                 </div >
             )}
         </>
+    )
+}
+export const ToggleSkeleton = () => {
+    return (
+        <div className='justify-between w-full'>
+            <Skeleton className="h-6 w-[100px]" />
+            <Skeleton className="h-6 w-6" />
+        </div>
     )
 }
