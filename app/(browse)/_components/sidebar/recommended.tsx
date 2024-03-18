@@ -43,7 +43,7 @@ export default Recommended
 
 export const RecommendedSkeleton = () => {
     return (
-        <ul>
+        <ul className="px-2 pt-2 lg:pt-0">
             {[...Array(3)].map((_, i) => (
                 <UserItemSkeleton key={i} />
             ))}

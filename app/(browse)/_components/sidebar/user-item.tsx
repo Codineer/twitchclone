@@ -57,7 +57,7 @@ export const UserItem = ({ username,
 export const UserItemSkeleton = () => {
     return (
         <li className='flex gap-1 items-center gap-x-4 px-3 py-2'>
-            <Skeleton className='min-h-[32px] min-w-[32] rounded-full' />
+            <Skeleton className='min-h-[32px] min-w-[32px] rounded-full' />
             <div className='flex-1'>
                 <Skeleton className='h-6'></Skeleton>
             </div>
