@@ -5,7 +5,6 @@ import Recommended,
 { RecommendedSkeleton }
     from './recommended'
 import { Following, FollowingSkeletion } from './following'
-import { ToggleSkeleton } from './toggle'
 import { getRecommended } from '@/lib/recommended-service'
 import { getFollowedUsers } from '@/lib/follow-service'
 

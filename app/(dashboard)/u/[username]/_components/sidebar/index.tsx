@@ -7,7 +7,7 @@ const Sidebar = () => {
         <Wrapper>
             <Toggle />
             <Navigation />
-            Sidebar
+
         </Wrapper>
     )
 }

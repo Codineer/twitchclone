@@ -3,7 +3,7 @@ import React from 'react'
 import { usePathname } from 'next/navigation'
 import { useUser } from '@clerk/nextjs'
 import { NavItem } from './nav-item'
-
+import { NavItemSkeleton } from './nav-item'
 import {
     Fullscreen,
     KeyRound,
@@ -37,7 +37,19 @@ export const Navigation = () => {
         },
 
     ]
-
+    if (!user?.username) {
+        return (
+            <ul className='space-y-2'>
+                {
+                    (
+                        [...Array(4)].map((_, i) => (
+                            <NavItemSkeleton key={i} />
+                        ))
+                    )
+                }
+            </ul>
+        )
+    }
     return (
         <ul className=''>
             {routes.map(route => (
@@ -51,6 +63,20 @@ export const Navigation = () => {
 
             ))}
 
+        </ul>
+    )
+}
+
+export const NavigationSkeleton = () => {
+    return (
+        <ul className='space-y-2'>
+            {
+                (
+                    [...Array(4)].map((_, i) => (
+                        <NavItemSkeleton key={i} />
+                    ))
+                )
+            }
         </ul>
     )
 }
