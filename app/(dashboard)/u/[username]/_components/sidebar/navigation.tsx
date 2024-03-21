@@ -51,7 +51,7 @@ export const Navigation = () => {
         )
     }
     return (
-        <ul className=''>
+        <ul className='space-y-2'>
             {routes.map(route => (
                 <NavItem
                     key={route.href}
