@@ -21,7 +21,6 @@ export const NavItem = (
     }
         : NavItemProps) => {
     const { collapsed } = useCreatorSidebar((state) => state)
-    console.log(label)
     return (
         <Button
             asChild
