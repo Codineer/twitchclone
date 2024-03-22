@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { UrlCard } from './_components/url-card'
 import { KeyCard } from './_components/key-card'
+import { ConnectModal } from '@/app/(dashboard)/u/[username]/(home)/keys/_components/connect-modal'
 import React from 'react'
 import { getSelf } from '@/lib/auth-service'
 import { getStreamByUserId } from '@/lib/stream-service'
@@ -21,9 +22,7 @@ const KeysPage = async () => {
                 <h1 className='text-2xl font-bold'>
                     Keys & URLs
                 </h1>
-                <Button variant={"primary"}>
-                    Generate
-                </Button>
+                <ConnectModal />
             </div>
             <div className='space-y-4'>
                 <UrlCard value={stream.serverUrl} />

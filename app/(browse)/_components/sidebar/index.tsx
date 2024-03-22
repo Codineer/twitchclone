@@ -9,7 +9,9 @@ import { getRecommended } from '@/lib/recommended-service'
 import { getFollowedUsers } from '@/lib/follow-service'
 
 const Sidebar = async () => {
-    const recommended: User[] = await getRecommended();
+    const recommended: (User & {
+        stream: { isLive: boolean } | null;
+    })[] = await getRecommended();
     const following = await getFollowedUsers()
     return (
 

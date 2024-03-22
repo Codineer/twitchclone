@@ -1,14 +1,17 @@
 "use client"
-
 import React from 'react'
 import { User } from '@prisma/client'
 import { useSidebar } from '@/store/use-sidebar'
 import { UserItem, UserItemSkeleton } from './user-item'
 
-const Recommended = ({ data }: { data: User[] }) => {
+const Recommended = ({ data }: {
+    data: (User & {
+        stream: { isLive: boolean } | null;
+    })[];
+}
+) => {
 
     const { collapsed } = useSidebar(state => state)
-    console.log(data.length)
     const showLabel = !collapsed && data.length > 0
 
     return (
@@ -29,7 +32,7 @@ const Recommended = ({ data }: { data: User[] }) => {
                             key={user.id}
                             username={user.username}
                             imageUrl={user.imageUrl}
-                            isLive={true}
+                            isLive={user.stream?.isLive}
                         />
                     })
 
